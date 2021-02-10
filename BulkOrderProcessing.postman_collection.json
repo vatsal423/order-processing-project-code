@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "f0551fd8-6ce6-4c4e-8da2-18f317ed534f",
+		"name": "BulkOrderProcessing",
+		"description": "Bulk Order Processing API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Bulk Order API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orders\" :\r\n    [\r\n        {\r\n            \"customerId\" : \"88a13f5c-68e4-11eb-9439-0242ac130002\",\r\n            \"items\" : \r\n            [\r\n                {\r\n                \"itemId\" : \"283d0096-68e5-11eb-9439-0242ac130002\",\r\n                \"quantity\" : 1\r\n                }\r\n            ],\r\n            \"shippingId\" : \"271575e4-68e6-11eb-9439-0242ac130002\",\r\n            \"payments\" : \r\n            [\r\n                {\r\n                    \"paymentTypeId\" : \"e8d19e02-68e5-11eb-9439-0242ac130002\",\r\n                    \"amount\" : 899.00,\r\n                    \"cardNo\" : \"1234561234561289\",\r\n                    \"addressLine1\" : \"5678 ABC Street\",\r\n                    \"addressLine2\" : \"Apt 5671\",\r\n                    \"city\" : \"Naperville\",\r\n                    \"state\" : \"Illinois\",\r\n                    \"zip\" : 70001 \r\n                }\r\n            ]\r\n        }      \r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/create/bulk/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"create",
+						"bulk",
+						"order"
+					]
+				},
+				"description": "Create Bulk Order API"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Bulk Order API",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orders\" :\r\n    [\r\n        {\r\n            \"orderId\" : \"ef740c52-efe8-4a6f-a9d6-418c5ac628ab\",\r\n            \"orderStatusId\" : \"9a4234a4-68e5-11eb-9439-0242ac130002\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/update/bulk/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"update",
+						"bulk",
+						"order"
+					]
+				},
+				"description": "Update Bulk Order API"
+			},
+			"response": []
+		}
+	]
+}

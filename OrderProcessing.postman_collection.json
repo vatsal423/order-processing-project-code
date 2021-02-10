@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "d2cbfa9a-a8bd-423f-9b3a-563c511f3e80",
+		"name": "OrderProcessing",
+		"description": "REST APIs for Order Processing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Order API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\" : \"2137a2d4-68e4-11eb-9439-0242ac130002\",\r\n    \"items\" : \r\n    [\r\n        {\r\n           \"itemId\" : \"ef9b9ef0-68e4-11eb-9439-0242ac130002\",\r\n           \"quantity\" : 1\r\n        }\r\n    ],\r\n    \"shippingId\" : \"271575e4-68e6-11eb-9439-0242ac130002\",\r\n    \"payments\" : \r\n    [\r\n        {\r\n            \"paymentTypeId\" : \"e8d19e02-68e5-11eb-9439-0242ac130002\",\r\n            \"amount\" : 899.00,\r\n            \"cardNo\" : \"1234561234561234\",\r\n            \"addressLine1\" : \"1234 ABC Street\",\r\n            \"addressLine2\" : \"Apt 1234\",\r\n            \"city\" : \"Dallas\",\r\n            \"state\" : \"Texas\",\r\n            \"zip\" : 70000 \r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/create/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"create",
+						"order"
+					]
+				},
+				"description": "Create Order API"
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Order API",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cancel/order/cff26a28-833e-45d3-9195-200867458eba",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cancel",
+						"order",
+						"cff26a28-833e-45d3-9195-200867458eba"
+					]
+				},
+				"description": "Cancel Order API"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/get/order/f9e6ae9d-a67e-422a-9bc1-e1e3108dc60f",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get",
+						"order",
+						"f9e6ae9d-a67e-422a-9bc1-e1e3108dc60f"
+					]
+				},
+				"description": "Get Order API"
+			},
+			"response": []
+		}
+	]
+}
